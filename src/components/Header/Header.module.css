@@ -1,0 +1,13 @@
+.header {
+  margin-top: 0;
+  color: #00ffee;
+  background-color: black;
+  text-decoration: none;
+  padding: 10px;
+  width: 100%;
+}
+
+.header a {
+  text-decoration: none;
+  color: #00ffee;
+}
