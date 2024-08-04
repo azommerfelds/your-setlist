@@ -2,16 +2,19 @@ import React from "react";
 import styles from "./Setlist.module.css";
 import Track from "../Track/Track";
 
-function setlist(props) {
+function Setlist({ setlist, action }) {
   return (
     <div className={styles.header}>
-      <h2>Setlist</h2>
+      <h2>{setlist.name}</h2>
       <div>
-        {props.setlist.length === 0 ? (
-          <p>Your setlist is empty. Click on a song to add it.</p>
+        {setlist.tracks.length === 0 ? (
+          <p>Your setlist is empty. Search for a song and add it.</p>
         ) : (
-          props.setlist.map((song) => (
-            <Track song={song} action={props.action} />
+          setlist.tracks.map((song) => (
+            <div className={styles.track}>
+              <Track key={song.id} song={song} />
+              <button onClick={() => action(song)}>➖</button>
+            </div>
           ))
         )}
       </div>
@@ -19,4 +22,4 @@ function setlist(props) {
   );
 }
 
-export default setlist;
+export default Setlist;

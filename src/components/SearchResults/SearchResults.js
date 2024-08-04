@@ -8,7 +8,12 @@ function SearchResults(props) {
       {props.results.length === 0 && props.search != "" ? (
         <p>Search for a song or an artist</p>
       ) : (
-        props.results.map((song) => <Track song={song} action={props.action} />)
+        props.results.map((song) => (
+          <div className={styles.track}>
+            <Track song={song} action={props.action} />
+            <button onClick={() => props.action(song)}>➕</button>
+          </div>
+        ))
       )}
     </div>
   );

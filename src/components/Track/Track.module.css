@@ -1,8 +1,0 @@
-/* Track.module.css */
-.track {
-  cursor: pointer;
-}
-
-.track p:hover {
-  font-weight: bold;
-}

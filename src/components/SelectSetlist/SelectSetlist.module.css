@@ -1,0 +1,25 @@
+.setlist {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px;
+  /* border-bottom: 1px solid #ccc; */
+}
+
+.setlist button {
+  /* background-color: #f44336; */
+  color: white;
+  border: none;
+  border-radius: 3px;
+  /* padding: 5px 10px; */
+  cursor: pointer;
+}
+
+.setlist p:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.setlist button:hover {
+  background-color: #d32f2f;
+}
