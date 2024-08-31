@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Header.module.css";
-import logo from "./logo.svg"; // Assuming the SVG file is named 'logo.svg' and located in the same directory
+import logo from "../../assets/logo.svg"; // Assuming the SVG file is named 'logo.svg' and located in the same directory
 
 function Header() {
   return (

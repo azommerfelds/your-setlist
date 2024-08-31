@@ -6,6 +6,7 @@ import SelectSetlist from "./components/SelectSetlist/SelectSetlist";
 import Setlist from "./components/Setlist/Setlist";
 import SearchBar from "./components/SearchBar/SearchBar";
 import SearchResults from "./components/SearchResults/SearchResults";
+import useSpotifyToken from "./hooks/useSpotifyToken";
 import songs from "./data/songs"; // replace with API data
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
   const [results, setResults] = useState([]);
   const [setlists, setSetlists] = useState([]);
   const [selectedSetlistId, setSelectedSetlistId] = useState(null);
+  const spotifyToken = useSpotifyToken();
 
   const addSetlist = (name) => {
     const newSetlist = {
