@@ -42,7 +42,7 @@ const searchSpotify = async () => {
 
   // Write the new object to a JSON file
   fs.writeFileSync(
-    "./searchReesults.json",
+    "../data/searchReesults.json",
     JSON.stringify(searchResults, null, 2),
     "utf-8"
   );

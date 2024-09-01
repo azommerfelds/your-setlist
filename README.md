@@ -35,8 +35,8 @@ YourSetlist helps musicians prepare to their next gig by allowing the creation o
 4. Create a `.env` file in the root directory and add your API secrets:
 
    ```env
-   API_CLIENT_ID=your_api_key_here
-   API_CLIENT_KEY=https://api.example.com
+   REACT_APP_SPOTIFY_CLIENT_ID=your_api_key_here
+   REACT_APP_SPOTIFY_CLIENT_SECRET=https://api.example.com
    ```
 
 5. Start the development server:
