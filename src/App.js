@@ -7,7 +7,7 @@ import Setlist from "./components/Setlist/Setlist";
 import SearchBar from "./components/SearchBar/SearchBar";
 import SearchResults from "./components/SearchResults/SearchResults";
 import useSpotifyToken from "./hooks/useSpotifyToken";
-import songs from "./data/songs"; // replace with API data
+import searchSpotify from "./utility/searchSpotify";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -60,14 +60,10 @@ function App() {
     );
   };
 
-  const handleSearch = (e) => {
+  const handleSpotifySearch = async (e) => {
     e.preventDefault();
-    const filteredSongs = songs.filter(
-      (song) =>
-        song.title.toLowerCase().includes(search.toLowerCase()) ||
-        song.artist.toLowerCase().includes(search.toLowerCase())
-    );
-    setResults(search ? filteredSongs : []);
+    const searchResults = await searchSpotify(spotifyToken, search);
+    setResults(search ? searchResults : []);
   };
 
   return (
@@ -98,7 +94,7 @@ function App() {
           {selectedSetlistId && (
             <>
               <SearchBar
-                handleSearch={handleSearch}
+                handleSearch={handleSpotifySearch}
                 search={search}
                 setSearch={setSearch}
               />
