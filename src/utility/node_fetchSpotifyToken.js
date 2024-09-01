@@ -1,9 +1,8 @@
 require("dotenv").config({ path: "../../.env" });
 
 const fetchSpotifyToken = async () => {
-  const clientId = process.env.SPOTIFY_CLIENT_ID;
-  const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
-  console.log(clientId);
+  const clientId = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
+  const clientSecret = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
 
   const response = await fetch("https://accounts.spotify.com/api/token", {
     method: "POST",
@@ -18,8 +17,9 @@ const fetchSpotifyToken = async () => {
   }
 
   const data = await response.json();
+  // console.log(data.access_token);
   return data.access_token;
 };
 
-// export default fetchSpotifyToken;
+// fetchSpotifyToken();
 module.exports = fetchSpotifyToken;

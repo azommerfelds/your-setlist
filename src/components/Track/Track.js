@@ -5,7 +5,7 @@ function Track(props) {
   return (
     <div className={styles.track}>
       <p>
-        "{props.song.title}" by {props.song.artist}
+        "{props.song.name}" by {props.song.artist}
       </p>
     </div>
   );
